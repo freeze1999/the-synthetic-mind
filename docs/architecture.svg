@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="450" viewBox="0 0 680 450" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" role="img" aria-label="the synthetic mind architecture">
+  <rect x="0" y="0" width="680" height="450" rx="12" fill="#faf9f5" stroke="#e7e4d8" stroke-width="1"/>
+
+  <text x="40" y="34" font-size="15" font-weight="500" fill="#2a2a28">the synthetic mind: persistent mind, swappable shell</text>
+
+  <!-- persistent identity -->
+  <rect x="190" y="52" width="300" height="46" rx="8" fill="#efe7fb" stroke="#b89ce0"/>
+  <text x="340" y="74" font-size="14" font-weight="500" fill="#492f7a" text-anchor="middle">persistent identity &amp; continuity</text>
+  <text x="340" y="90" font-size="12" fill="#6b4ea0" text-anchor="middle">what survives a model swap</text>
+
+  <line x1="340" y1="98" x2="340" y2="120" stroke="#9a968a" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- memory system container -->
+  <rect x="50" y="122" width="580" height="182" rx="10" fill="#ffffff" stroke="#ddd9cc"/>
+  <text x="66" y="144" font-size="14" font-weight="500" fill="#2a2a28">memory system: carries continuity</text>
+
+  <!-- row 1 -->
+  <g fill="#d9f0ee" stroke="#7fc4bd">
+    <rect x="66" y="158" width="168" height="48" rx="8"/>
+    <rect x="252" y="158" width="168" height="48" rx="8"/>
+    <rect x="438" y="158" width="168" height="48" rx="8"/>
+  </g>
+  <g text-anchor="middle" fill="#1f5e57"><g font-size="14" font-weight="500">
+    <text x="150" y="182">working memory</text>
+    <text x="336" y="182">episodic archive</text>
+    <text x="522" y="182">core facts</text>
+  </g><g font-size="12" fill="#3c7a72">
+    <text x="150" y="198">recent turns, raw</text>
+    <text x="336" y="198">searchable log</text>
+    <text x="522" y="198">current truths</text>
+  </g></g>
+
+  <!-- row 2 -->
+  <g fill="#d9f0ee" stroke="#7fc4bd">
+    <rect x="66" y="226" width="168" height="48" rx="8"/>
+    <rect x="252" y="226" width="168" height="48" rx="8"/>
+    <rect x="438" y="226" width="168" height="48" rx="8"/>
+  </g>
+  <g text-anchor="middle" fill="#1f5e57"><g font-size="14" font-weight="500">
+    <text x="150" y="250">consolidation</text>
+    <text x="336" y="250">truth canon</text>
+    <text x="522" y="250">identity kernel</text>
+  </g><g font-size="12" fill="#3c7a72">
+    <text x="150" y="266">nightly replay</text>
+    <text x="336" y="266">beats stale recall</text>
+    <text x="522" y="266">values &amp; policy</text>
+  </g></g>
+
+  <line x1="340" y1="304" x2="340" y2="326" stroke="#9a968a" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- substrates -->
+  <g fill="#ececec" stroke="#bdbdbd">
+    <rect x="91" y="328" width="150" height="48" rx="8"/>
+    <rect x="265" y="328" width="150" height="48" rx="8"/>
+    <rect x="439" y="328" width="150" height="48" rx="8"/>
+  </g>
+  <g text-anchor="middle" fill="#444"><g font-size="14" font-weight="500">
+    <text x="166" y="352">model A</text>
+    <text x="340" y="352">model B</text>
+    <text x="514" y="352">model C</text>
+  </g><g font-size="12" fill="#777">
+    <text x="166" y="368">e.g. Claude</text>
+    <text x="340" y="368">e.g. DeepSeek</text>
+    <text x="514" y="368">e.g. local</text>
+  </g></g>
+
+  <text x="340" y="402" font-size="12" fill="#777" text-anchor="middle">interchangeable substrate: the same identity persists across all three</text>
+  <text x="40" y="426" font-size="12" fill="#999">teal: persistent self-layer      ·      gray: swappable model shell</text>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-rev">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9a968a"/>
+    </marker>
+  </defs>
+</svg>
