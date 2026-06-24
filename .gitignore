@@ -1,0 +1,32 @@
+# Secrets, never commit (defense in depth)
+.env
+.env.*
+*.env
+*.token
+*.pem
+*.key
+id_rsa*
+*secret*
+*credential*
+config.yaml
+config.local.*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Data / state, keep private
+state.db
+*.sqlite
+*.sqlite3
+/state-snapshots/
+/dream/
+/logs/
