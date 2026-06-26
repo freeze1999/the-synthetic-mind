@@ -49,6 +49,12 @@ Working prototype. The memory tiers, nightly consolidation, truth canon, identit
 - Salience-weighted decay for old emotional context
 - A fine-tuned model that carries the voice in its weights, with facts kept external
 
+## Field notes
+
+Debugging write-ups from running this thing in the wild.
+
+- [A silent vendor update broke my agent's memory](docs/postmortems/compaction-persistence-loop.md). A context-compaction loop that recomputed a summary every turn and threw it away. Three wrong theories, the method that found it, and the one-line fix.
+
 ## Scope
 
 This covers the engineering and the method only. The system was built and tested in a personal setting, and that personal layer isn't here. It also includes safety work: a crisis off-ramp and an operator stop-switch.
