@@ -39,6 +39,10 @@ The identity holds when it's backed by the full live-memory stack, and falls apa
 
 Full write-up: [docs/the-synthetic-mind.md](docs/the-synthetic-mind.md).
 
+The other half of this program, what a persistent agent does with its idle
+hours, is public as [reverie-automata](https://github.com/freeze1999/reverie-automata):
+a gated, evidence-checked idle engine built for exactly this kind of entity.
+
 ## Status
 
 Working prototype. The memory tiers, nightly consolidation, truth canon, identity kernel, and the substrate-swap test are all running.
@@ -62,3 +66,15 @@ This covers the engineering and the method only. The system was built and tested
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+## Status
+
+What this is: a research writeup of a private system that runs every day,
+plus field notes from real incidents (see docs/postmortems/). The
+architecture, the memory model, and the substrate-swap method are documented
+here in full.
+
+What this is NOT: an installable package. The code stays private because it
+runs a real personal deployment; deployment details, credentials, and
+personal data are left out on purpose, and examples are synthetic where
+marked. If you want the runnable idle-engine half, that is reverie-automata.
