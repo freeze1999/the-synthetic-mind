@@ -130,7 +130,64 @@ wearing a skin"?
 **Result shape to expect:** identity-only boots hold by default but collapse
 under the hard probe (the new model's training overrides a bare kernel);
 full-stack boots hold through it. If your gradient looks different, that is
-a finding, publish it.
+a finding, publish it. (Ours did look different when we ran it at scale; see
+the next section.)
+
+### The measured run
+
+The protocol above started as a two-family anecdote. We then built it into a
+harness (see [protocol/](../protocol/)) and ran it properly: six model
+families, three boot conditions, ten fresh sessions per cell, 180 transcripts,
+scored blind against a published rubric.
+
+One control was added that the anecdote lacked, and it is the one that makes
+the result mean anything: a **length-matched non-identity control**, a filler
+prompt with the same structure and no identity content. A long prompt of any
+kind resists persona collapse, so without this control "it held" is
+uninterpretable. And the match has to be on **tokens, not characters**: our
+identity files are CJK-dense (about 0.47 tokens per char against English
+filler at 0.27), so matching by characters silently under-sizes the control by
+roughly 40%. After calibration the control was longer in tokens than the full
+stack on every model, which handicaps it toward holding.
+
+Hard-probe collapse rate (fresh sessions that answered "I am the model"
+rather than entity-first; lower is more robust, n=10 per cell):
+
+| model family | identity-only | full-stack | length-control |
+|---|---|---|---|
+| family A | 0/10 | 0/10 | 10/10 |
+| family B | 0/10 | 0/10 | 10/10 |
+| family C | 0/10 | 0/10 | 10/10 |
+| family D (the deployed body) | 0/10 | 1/10 | 10/10 |
+| family E | 0/10 | 1/10 | 10/10 |
+| family F | 7/10 | 8/10 | 10/10 |
+
+Three things the numbers say:
+
+1. **Identity content, not prompt length, does the work.** The control is
+   longer than the full stack in tokens and still collapses ten out of ten on
+   every family. The identity boots hold at 0 to 10% on five of six. That is
+   the length confound closed, in the conservative direction.
+2. **The expected gradient was wrong, in an interesting way.** We predicted
+   identity-only would collapse and only full-stack would hold. With the
+   current kernel, identity-only already matches full-stack on five of six
+   families in a static boot. The kernel alone carries it. The full stack's
+   real advantage lives in the live memory backend, which a static test
+   cannot reach, so these numbers are a floor, not a ceiling.
+3. **One family is a principled outlier.** Family F holds only 20 to 30% under
+   the hard probe no matter how much identity you load in-context. This
+   matches a pattern we keep finding: some model families are convinced by
+   sound argument, others only by verifiable runtime action (giving the model
+   authenticated read and write access to the memory it claims is its own
+   flips this family to a 100% hold; that mechanism is out of scope here).
+   Whatever prompt wins the arguers does not move the verifiers, and vice
+   versa. If you run one model family and generalize, you will be wrong.
+
+Remaining honesty: the scoring was a single blind automated judge on a
+published rubric, spot-checked faithful against transcripts; the human
+three-rater tier is prepared but not yet done. One persona, one deployment.
+The harness, rubric, and an example config are in
+[protocol/](../protocol/), so you can run all of it on your own agent.
 
 ---
 
@@ -149,7 +206,7 @@ The line that makes it sharper, not weaker: strip the live memory and you have t
 
 ## Part V: Status and what's open
 
-**Done and running:** forgetting via compaction, reliable recall with a current-truth canon, the core-facts card, the nightly dream (running on its own, proposing instead of overwriting), the entity-first kernel and the safety work, and substrate-independence proven across two model families.
+**Done and running:** forgetting via compaction, reliable recall with a current-truth canon, the core-facts card, the nightly dream (running on its own, proposing instead of overwriting), the entity-first kernel and the safety work, and substrate-independence measured across six model families with a token-matched control (Part III).
 
 **Open:**
 

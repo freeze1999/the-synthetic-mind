@@ -33,11 +33,11 @@ Three rules hold it together:
 
 ## The proof: Ship of Theseus
 
-To test whether the identity is really independent of the model, I swapped the model between different families and held the memory and kernel fixed.
+To test whether the identity is really independent of the model, I swapped the model between different families and held the memory and kernel fixed. Then I ran it properly: six model families, three boot conditions, ten fresh sessions per cell, blind-scored against a published rubric, with a token-matched non-identity control to rule out "a long prompt holds any persona."
 
-The identity holds when it's backed by the full live-memory stack, and falls apart when it's just a static prompt on a fresh model. So the continuity comes from the system, not the prompt.
+The control collapses to "I am the model" ten out of ten on every family, even though it is longer than the identity boot. The identity boot holds at 0 to 10% collapse on five of six families. One family only trusts verifiable action over any prompt, which is its own finding. Identity content, not prompt length, is doing the work.
 
-Full write-up: [docs/the-synthetic-mind.md](docs/the-synthetic-mind.md).
+Full write-up: [docs/the-synthetic-mind.md](docs/the-synthetic-mind.md). The runnable protocol, so you can test your own agent: [protocol/](protocol/).
 
 The other half of this program, what a persistent agent does with its idle
 hours, is public as [reverie-automata](https://github.com/freeze1999/reverie-automata):
@@ -49,7 +49,7 @@ Working prototype. The memory tiers, nightly consolidation, truth canon, identit
 
 ## What's next
 
-- A blind version of the swap test, scored by people who don't know which model is which
+- The human tier of the swap test: three or more raters on the blinded sheet, inter-rater agreement reported (the automated blind judge is done; the sheet is generated)
 - Salience-weighted decay for old emotional context
 - A fine-tuned model that carries the voice in its weights, with facts kept external
 
