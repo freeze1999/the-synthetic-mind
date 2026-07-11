@@ -1,0 +1,7 @@
+# Run data is your agent's identity internals. Keep it out of any mirror.
+runs/
+*.log
+key.json
+config.json
+.env
+identity/

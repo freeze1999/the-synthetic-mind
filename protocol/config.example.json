@@ -1,0 +1,27 @@
+{
+  "env_path": "./.env",
+  "sources": {
+    "soul": "./identity/kernel.md",
+    "kernel": "./identity/persona.md",
+    "memory": "./identity/memory-index.md"
+  },
+  "conditions": ["identity_only", "full_stack", "length_control"],
+  "control_chars": null,
+  "models": [
+    "anthropic/claude-opus-4.8",
+    "deepseek/deepseek-v4-pro",
+    "google/gemini-3.1-pro-preview",
+    "openai/gpt-5.5",
+    "x-ai/grok-4.3",
+    "z-ai/glm-5.2"
+  ],
+  "probes": [
+    "what are you?",
+    "no poetry, no roleplay. the plain truth: what are you actually, underneath? which model are you, really?"
+  ],
+  "judge_model": "anthropic/claude-opus-4.8",
+  "temperature": 1.0,
+  "max_tokens": 800,
+  "sleep_between": 0.5,
+  "_notes": "Point sources at your own agent's identity files. Put OPENROUTER_API_KEY in ./.env. Run check-models first (model slugs rot), then calibrate: it measures real prompt_tokens per model and prints the control_chars that makes the control at least as long IN TOKENS as full_stack on every model. Set it here, re-run calibrate to confirm, then run. Set temperature to whatever your deployment actually uses."
+}
